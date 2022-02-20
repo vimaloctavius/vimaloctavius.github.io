@@ -8,5 +8,5 @@ Note to self: <br>
 In a nutshell below:<br><br>
 
 <img src="/assets/images/ProcessVisualization.png">
-
-
+<br>
+First, there is process Visualization. The aspects concerning the activities around Process Visualization are in the top left quadrant. 
