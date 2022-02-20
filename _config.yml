@@ -1,0 +1,99 @@
+# WhatATheme
+markdown: kramdown
+
+# URL of the Site
+url: ''
+# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
+baseurl: 
+
+# Title of the Site
+title: Data Psyched
+# Description of the Site
+description: A blog on Data Science, Lean Six Sigma, Guitars and more
+# URL of Image of the Site
+site-image: 
+# Keywords of the Site
+site-keywords: Data Science, Blog, Six Sigma, Guitars 
+# URL for the Image of custom Favicon
+favicon-url: 
+
+# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
+heroimage: 
+#https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+
+# Social Media and Contact
+# If you don't want to use any icon, you can leave them blank.
+email:
+facebook_username: vimaloctavius 
+twitter_username: vimaloctavius
+instagram_username: vimaloctavius
+linkedin_username: vimal-octavius-71679a1b 
+github_username:  vimaloctavius
+youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
+#reddit_username: /
+#behance_username: /
+#dribbble_username: /
+#spotify_username: /
+
+# Google Analytics
+google-analytics: 
+#UA-163806439-1
+
+# Disqus
+disqus-shortname: vimaloctavius
+
+# Name of the Author
+author-name: Vimal Octavius PJ
+# URL for the Image of the Author
+author-image: /home/voctavius/scripts/portfolio/WhatATheme/assets/images/vimal-cap.jpg
+# 60 Words About the Author
+author-about: A Data Science Professional - Certified by IBM, Six Sigma Blackbelt certified by Wipro (Projects involving Govt. accounts in India, Global Customers from Retail, Transportation, Manufacturing, Energy, Natural Resources & Utilities verticals). Green Belt Certified (Projects involving Kaizen events at GE Infrastructure Businesses, Technology Services Group); Quality - LEAN practitioner certified by Wipro, ITIL v2 foundation Certified, Microsoft Certified Professional/Systems Administrator, PMP trainedand tested.
+# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
+author-url: https://github.com/vimaloctavius 
+
+# SASS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build settings
+plugins:
+  - jekyll-admin
+  - jekyll-feed
+  - jekyll-gist
+# Permalink
+permalink: "blog/:title"
+
+# Compress
+compress_html:
+  clippings: all
+
+# Defaults
+defaults:
+  -
+    scope:
+      type: 'posts'
+    values:
+      layout: post
+      post-image: ""
+      description: ""
+      tags:
+        - ""
+  -
+    scope:
+      type: 'pages'
+    values:
+      layout: page
+
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
