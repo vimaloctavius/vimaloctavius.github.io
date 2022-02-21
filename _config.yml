@@ -29,14 +29,14 @@ twitter_username: vimaloctavius
 instagram_username: vimaloctavius
 linkedin_username: vimal-octavius-71679a1b 
 github_username:  vimaloctavius
-youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
+youtube_channel_id: UCJZHBUkjm3V6eyRrokU11hw
 #reddit_username: /
 #behance_username: /
 #dribbble_username: /
 #spotify_username: /
 
 # Google Analytics
-google-analytics: 
+google-analytics: UA-221057412-1
 #UA-163806439-1
 
 # Disqus
@@ -45,7 +45,7 @@ disqus-shortname: vimaloctavius
 # Name of the Author
 author-name: Vimal Octavius PJ
 # URL for the Image of the Author
-author-image: /home/voctavius/scripts/portfolio/WhatATheme/assets/images/vimal-cap.jpg
+author-image: assets/images/vimal-cap.jpg
 # 60 Words About the Author
 author-about: A Data Science Professional - Certified by IBM, Six Sigma Blackbelt certified by Wipro (Projects involving Govt. accounts in India, Global Customers from Retail, Transportation, Manufacturing, Energy, Natural Resources & Utilities verticals). Green Belt Certified (Projects involving Kaizen events at GE Infrastructure Businesses, Technology Services Group); Quality - LEAN practitioner certified by Wipro, ITIL v2 foundation Certified, Microsoft Certified Professional/Systems Administrator, PMP trainedand tested.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
