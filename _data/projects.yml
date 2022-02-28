@@ -5,11 +5,11 @@
 - name: Process Performance Models 
   link: /PPM.html
   image: https://i.ibb.co/XSY0PHJ/stackingcups.jpg
-  description: Key learnings from building data models that are CMMI Maturity Level 5 compliant
-- name: Accelerated Six Sigma
-  link: /ss
+  description: Applying Six Sigma in building data models that are CMMI Maturity Level 5 compliant
+- name: Machine Learning Models 
+  link: /Predicting_Loan_Defaults.html
   image: https://i.ibb.co/bvcJywm/lego.jpg
-  description: Crux of my Six Sigma Blackbelt Projects
+  description: Predicting Loan defaults using classification Models
 - name: Productivity Analysis 
   link: /ProductivityAnalysis.html
   image: https://i.ibb.co/hfJxxG0/rubkis.jpg
@@ -18,3 +18,9 @@
   link: /train
   image: https://i.ibb.co/yPmXKr9/bike.jpg
   description: If you can't explain it simply, you don't understand it well enough, A Einstein. 
+
+
+#- name: Accelerated Six Sigma
+#  link: /ss
+#  image: https://i.ibb.co/bvcJywm/lego.jpg
+#  description: Crux of my Six Sigma Blackbelt Projects
