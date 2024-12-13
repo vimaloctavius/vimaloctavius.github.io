@@ -1,0 +1,327 @@
+---
+layout: post
+title: "Intro to Lean Six Sigma"
+date: 2024-12-12
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMAIC Animation</title>
+</head>
+  <style>
+    :root {
+    --define-color: #3a7ca5;
+    --measure-color: #63a46c;
+    --analyze-color: #d4a373;
+    --improve-color: #e76f51;
+    --control-color: #9a8c98;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.dmaic-wheel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: rotate 20s linear infinite;
+}
+
+.phase {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+
+.phase:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.phase h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.phase p {
+    font-size: 14px;
+}
+
+.define {
+    top: 0;
+    left: 200px;
+    background-color: var(--define-color);
+}
+
+.measure {
+    top: 150px;
+    right: 0;
+    background-color: var(--measure-color);
+}
+
+.analyze {
+    bottom: 0;
+    right: 100px;
+    background-color: var(--analyze-color);
+}
+
+.improve {
+    bottom: 0;
+    left: 100px;
+    background-color: var(--improve-color);
+}
+
+.control {
+    top: 150px;
+    left: 0;
+    background-color: var(--control-color);
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.center-circle h1 {
+    font-size: 32px;
+    color: var(--text-color);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .phase {
+        width: 100px;
+        height: 100px;
+    }
+
+    .phase h2 {
+        font-size: 16px;
+    }
+
+    .phase p {
+        font-size: 10px;
+    }
+
+    .center-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .center-circle h1 {
+        font-size: 20px;
+    }
+
+    .define {
+        left: 100px;
+    }
+
+    .measure {
+        top: 75px;
+    }
+
+    .analyze {
+        right: 50px;
+    }
+
+    .improve {
+        left: 50px;
+    }
+
+    .control {
+        top: 75px;
+    }
+}
+      </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const wheel = document.querySelector('.dmaic-wheel');
+    const phases = document.querySelectorAll('.phase');
+    const centerCircle = document.querySelector('.center-circle');
+    let isRotating = true;
+
+    function toggleRotation() {
+        isRotating = !isRotating;
+        wheel.style.animationPlayState = isRotating ? 'running' : 'paused';
+    }
+
+    centerCircle.addEventListener('click', toggleRotation);
+
+    phases.forEach(phase => {
+        phase.addEventListener('mouseenter', () => {
+            if (isRotating) toggleRotation();
+            phase.style.transform = 'scale(1.1) translateZ(50px)';
+        });
+
+        phase.addEventListener('mouseleave', () => {
+            if (!isRotating) toggleRotation();
+            phase.style.transform = 'scale(1) translateZ(0)';
+        });
+    });
+
+    function pulseEffect() {
+        phases.forEach((phase, index) => {
+            setTimeout(() => {
+                phase.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    phase.style.transform = 'scale(1)';
+                }, 300);
+            }, index * 200);
+        });
+    }
+
+    setInterval(pulseEffect, 5000);
+
+    function updatePhaseContent() {
+        const phaseContents = [
+            {
+                title: 'Define',
+                description: [
+                    'Identify the problem',
+                    'Set project goals',
+                    'Map processes'
+                ]
+            },
+            {
+                title: 'Measure',
+                description: [
+                    'Collect baseline data',
+                    'Identify key metrics',
+                    'Validate measurement system'
+                ]
+            },
+            {
+                title: 'Analyze',
+                description: [
+                    'Identify root causes',
+                    'Develop hypotheses',
+                    'Validate hypotheses'
+                ]
+            },
+            {
+                title: 'Improve',
+                description: [
+                    'Develop solutions',
+                    'Test improvements',
+                    'Implement changes'
+                ]
+            },
+            {
+                title: 'Control',
+                description: [
+                    'Standardize processes',
+                    'Implement controls',
+                    'Monitor performance'
+                ]
+            }
+        ];
+
+        phases.forEach((phase, index) => {
+            const content = phaseContents[index];
+            const title = phase.querySelector('h2');
+            const description = phase.querySelector('p');
+
+            title.textContent = content.title;
+            description.innerHTML = content.description.join('<br>');
+        });
+    }
+
+    updatePhaseContent();
+
+    let currentPhase = 0;
+    function highlightPhase() {
+        phases.forEach((phase, index) => {
+            if (index === currentPhase) {
+                phase.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.5)';
+            } else {
+                phase.style.boxShadow = 'none';
+            }
+        });
+        currentPhase = (currentPhase + 1) % phases.length;
+    }
+
+    setInterval(highlightPhase, 3000);
+});
+  
+</script>
+<body>
+    <div class="container">
+        <div class="dmaic-wheel">
+            <div class="phase define">
+                <h2>Define</h2>
+                <p>Clearly define the problem, customer requirements</p>
+            </div>
+            <div class="phase measure">
+                <h2>Measure</h2>
+                <p>Measure current process, establish baseline metrics</p>
+            </div>
+            <div class="phase analyze">
+                <h2>Analyze</h2>
+                <p>Analyze data, verify cause-and-effect relationships</p>
+            </div>
+            <div class="phase improve">
+                <h2>Improve</h2>
+                <p>Optimize process based on statistical analysis</p>
+            </div>
+            <div class="phase control">
+                <h2>Control</h2>
+                <p>Control future state, ensure deviations are corrected</p>
+            </div>
+        </div>
+        <div class="center-circle">
+            <h1>DMAIC</h1>
+        </div>
+    </div>
+</body>
+</html>
