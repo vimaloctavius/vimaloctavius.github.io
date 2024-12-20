@@ -8,7 +8,6 @@ tags:
 - six sigma
 - process improvement
 ---
-
 <div class="lss-container">
   <h1 class="lss-title">Lean Six Sigma</h1>
   <div class="lss-diagram">
@@ -76,7 +75,7 @@ tags:
 
 .lss-title {
   font-size: 36px;
-  color: #333;
+  color: #2c3e50;
   animation: fadeIn 1s ease-out;
 }
 
@@ -101,12 +100,12 @@ tags:
 }
 
 .lean {
-  background-color: #4CAF50;
+  background-color: #34495e;
   animation-delay: 0.5s;
 }
 
 .sigma {
-  background-color: #2196F3;
+  background-color: #2980b9;
   animation-delay: 1s;
 }
 
@@ -114,7 +113,7 @@ tags:
   position: absolute;
   width: 80px;
   height: 80px;
-  background-color: #FFC107;
+  background-color: #7f8c8d;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -133,7 +132,7 @@ tags:
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
-  background-color: #E91E63;
+  background-color: #3498db;
   color: white;
   border-radius: 20px;
   font-weight: bold;
@@ -153,7 +152,7 @@ tags:
 .step {
   width: 100px;
   height: 100px;
-  background-color: #9C27B0;
+  background-color: #2c3e50;
   color: white;
   display: flex;
   justify-content: center;
@@ -175,7 +174,7 @@ tags:
 }
 
 .tool {
-  background-color: #FF5722;
+  background-color: #95a5a6;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -239,9 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentStep = 0;
   setInterval(() => {
-    steps[currentStep].style.backgroundColor = '#9C27B0';
+    steps[currentStep].style.backgroundColor = '#2c3e50';
     currentStep = (currentStep + 1) % steps.length;
-    steps[currentStep].style.backgroundColor = '#FFC107';
+    steps[currentStep].style.backgroundColor = '#7f8c8d';
   }, 2000);
 
   tools.forEach(tool => {
@@ -255,10 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    container.style.backgroundColor = `hsl(${scrollPercentage * 3.6}, 70%, 90%)`;
+    container.style.backgroundColor = `hsl(${scrollPercentage * 3.6}, 20%, 95%)`;
   });
 });
 </script>
+
 
     <h1>Introduction to Lean Six Sigma</h1>
 
