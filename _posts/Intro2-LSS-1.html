@@ -1,0 +1,305 @@
+---
+title: Lean Six Sigma Overview
+layout: post
+post-image: assets/images/Glake.png
+description: An interactive overview of Lean Six Sigma methodology, its benefits, process, and tools.
+tags:
+- lean
+- six sigma
+- process improvement
+---
+
+<div class="lss-container">
+  <h1 class="lss-title">Lean Six Sigma</h1>
+  <div class="lss-diagram">
+    <div class="lss-circle lean">
+      <span>Lean</span>
+    </div>
+    <div class="lss-circle sigma">
+      <span>Six Sigma</span>
+    </div>
+    <div class="lss-overlap">
+      <span>LSS</span>
+    </div>
+  </div>
+  <div class="lss-benefits">
+    <ul>
+      <li class="benefit quality">Improve Quality</li>
+      <li class="benefit speed">Increase Speed</li>
+      <li class="benefit efficiency">Enhance Efficiency</li>
+    </ul>
+  </div>
+  <div class="lss-process">
+    <div class="step define">Define</div>
+    <div class="step measure">Measure</div>
+    <div class="step analyze">Analyze</div>
+    <div class="step improve">Improve</div>
+    <div class="step control">Control</div>
+  </div>
+  <div class="lss-tools">
+    <span class="tool">Value Stream Mapping</span>
+    <span class="tool">5S</span>
+    <span class="tool">DMAIC</span>
+    <span class="tool">Kaizen</span>
+    <span class="tool">Statistical Analysis</span>
+  </div>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lss-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.lss-title {
+  font-size: 36px;
+  color: #333;
+  animation: fadeIn 1s ease-out;
+}
+
+.lss-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.lss-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.lean {
+  background-color: #4CAF50;
+  animation-delay: 0.5s;
+}
+
+.sigma {
+  background-color: #2196F3;
+  animation-delay: 1s;
+}
+
+.lss-overlap {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #FFC107;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  animation: scaleIn 0.5s ease-out 1.5s both;
+}
+
+.lss-benefits ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lss-benefits li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #E91E63;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  animation: slideIn 0.5s ease-out;
+}
+
+.quality { animation-delay: 2s; }
+.speed { animation-delay: 2.2s; }
+.efficiency { animation-delay: 2.4s; }
+
+.lss-process {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.step {
+  width: 100px;
+  height: 100px;
+  background-color: #9C27B0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: scale(1.1);
+}
+
+.lss-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tool {
+  background-color: #FF5722;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  animation: rotate 10s linear infinite;
+}
+
+.tool:nth-child(odd) {
+  animation-direction: reverse;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.lss-container');
+  const title = document.querySelector('.lss-title');
+  const circles = document.querySelectorAll('.lss-circle');
+  const overlap = document.querySelector('.lss-overlap');
+  const benefits = document.querySelectorAll('.benefit');
+  const steps = document.querySelectorAll('.step');
+  const tools = document.querySelectorAll('.tool');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  [title, ...circles, overlap, ...benefits, ...steps, ...tools].forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    observer.observe(el);
+  });
+
+  circles.forEach(circle => {
+    circle.addEventListener('mouseover', () => {
+      circle.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+    circle.addEventListener('mouseout', () => {
+      circle.style.transform = 'scale(1) rotate(0deg)';
+    });
+  });
+
+  overlap.addEventListener('click', () => {
+    overlap.style.animation = 'rotate 1s linear';
+    setTimeout(() => {
+      overlap.style.animation = '';
+    }, 1000);
+  });
+
+  benefits.forEach(benefit => {
+    benefit.addEventListener('click', () => {
+      benefit.style.animation = 'pulse 0.5s ease-out';
+      setTimeout(() => {
+        benefit.style.animation = '';
+      }, 500);
+    });
+  });
+
+  let currentStep = 0;
+  setInterval(() => {
+    steps[currentStep].style.backgroundColor = '#9C27B0';
+    currentStep = (currentStep + 1) % steps.length;
+    steps[currentStep].style.backgroundColor = '#FFC107';
+  }, 2000);
+
+  tools.forEach(tool => {
+    tool.addEventListener('mouseover', () => {
+      tool.style.animationPlayState = 'paused';
+    });
+    tool.addEventListener('mouseout', () => {
+      tool.style.animationPlayState = 'running';
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    container.style.backgroundColor = `hsl(${scrollPercentage * 3.6}, 70%, 90%)`;
+  });
+});
+</script>
+
+## Introduction to Lean Six Sigma
+
+Lean Six Sigma is a methodology that combines Lean manufacturing/enterprise and Six Sigma to improve performance by systematically removing waste and reducing variation. It relies on a collaborative team effort to improve performance by removing waste and reducing variation.
+
+The Lean Six Sigma methodology views lean manufacturing, which addresses process flow and waste issues, and Six Sigma, with its focus on variation and design, as complementary disciplines aimed at promoting "business and operational excellence".
+
+### Key Components
+
+1. **Lean**: Focuses on eliminating waste and improving flow
+2. **Six Sigma**: Aims to reduce variation and enhance quality
+3. **Combined Approach**: Leverages strengths of both methodologies
+
+### Benefits
+
+As illustrated in the interactive diagram above, Lean Six Sigma offers several key benefits:
+
+- Improved Quality
+- Increased Speed
+- Enhanced Efficiency
+
+### The DMAIC Process
+
+Lean Six Sigma projects follow the DMAIC process:
+
+1. Define
+2. Measure
+3. Analyze
+4. Improve
+5. Control
+
+Each of these steps is crucial in identifying, analyzing, and solving problems within an organization.
+
+### Tools and Techniques
+
+Some of the key tools used in Lean Six Sigma include:
+
+- Value Stream Mapping
+- 5S (Sort, Set in Order, Shine, Standardize, Sustain)
+- DMAIC framework
+- Kaizen (Continuous Improvement)
+- Statistical Analysis
+
+By integrating these tools and methodologies, organizations can achieve significant improvements in their processes, leading to better quality, faster delivery, and reduced costs.
